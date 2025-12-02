@@ -58,7 +58,7 @@ namespace Killemall.Data
             CheckGameDataIDs();
         }
 
-        protected virtual bool IsInDatabase() => false;
+        public virtual bool IsInDatabase() => false;
         protected virtual bool CanBeAddedToDatabase() => true;
 
         private bool ShowAddToDatabase => !IsInDatabase() && CanBeAddedToDatabase();

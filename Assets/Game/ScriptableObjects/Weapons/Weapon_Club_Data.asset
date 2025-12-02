@@ -22,6 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _id: 692C0CD8-29B7E
+  _sprite: {fileID: 0}
   _weaponName: Club
   _damageType: 1
   _damageAmount: 5

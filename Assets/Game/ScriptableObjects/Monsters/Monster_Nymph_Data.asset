@@ -22,10 +22,11 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _id: 692ACEF2-560386
+  _sprite: {fileID: 0}
   _monsterName: Nymph
   _resistance: 4
   _weakness: 3
-  _monsterTiers: 2
-  _health: 7
-  _damage: 3
-  _goldReward: 5
+  _monsterTier: 1
+  _overrideTierSettings: 0
+  _health: 3
+  _damage: 1

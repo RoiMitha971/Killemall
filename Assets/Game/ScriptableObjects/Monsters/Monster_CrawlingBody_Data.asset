@@ -22,10 +22,11 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _id: 692ACEF0-6A0A79
+  _sprite: {fileID: 21300000, guid: 1527679d697623c4ea21aab00a215f7e, type: 3}
   _monsterName: Crawling Body
   _resistance: 2
   _weakness: 1
-  _monsterTiers: 0
-  _health: 5
-  _damage: 5
-  _goldReward: 5
+  _monsterTier: 1
+  _overrideTierSettings: 0
+  _health: 3
+  _damage: 1

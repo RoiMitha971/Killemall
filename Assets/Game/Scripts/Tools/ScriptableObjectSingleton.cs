@@ -1,9 +1,10 @@
 using System.Diagnostics;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Killemall.Tools
 {
-    public abstract class ScriptableObjectSingleton<T> : ScriptableObject where T : ScriptableObject
+    public abstract class ScriptableObjectSingleton<T> : SerializedScriptableObject where T : ScriptableObject
     {
         protected static T _instance;
         public static T Instance

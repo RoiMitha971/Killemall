@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc9df5c4573fe7d4ca3f0fe799f7a57b, type: 3}
+  m_Name: GameplaySettings
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  MonsterTiers:
+    _tierSettings:
+    - _tier: 1
+      _health: 3
+      _damage: 1
+    - _tier: 2
+      _health: 5
+      _damage: 2
+    - _tier: 3
+      _health: 7
+      _damage: 2
+    - _tier: 4
+      _health: 8
+      _damage: 3
+    - _tier: 5
+      _health: 10
+      _damage: 3
+    - _tier: 6
+      _health: 12
+      _damage: 4
+    - _tier: 7
+      _health: 15
+      _damage: 5
+  Prefabs:
+    _monsterCardPrefab: {fileID: 9151765907448503170, guid: b4792bb7adc7ca649bd4d1e388f4924e, type: 3}

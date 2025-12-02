@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b5915919d165a74786b645e35cfa860, type: 3}
-  m_Name: Monster_T6_Data
+  m_Name: Monster_Soukounyan_Data
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -21,12 +21,12 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _id: 692ACEF6-314577
-  _sprite: {fileID: 0}
-  _monsterName: T6
+  _id: 692D8E2F-6A0A79
+  _sprite: {fileID: 21300000, guid: 1527679d697623c4ea21aab00a215f7e, type: 3}
+  _monsterName: Soukounyan
   _resistance: 4
   _weakness: 3
-  _monsterTier: 1
+  _monsterTier: 5
   _overrideTierSettings: 0
-  _health: 3
-  _damage: 1
+  _health: 10
+  _damage: 3

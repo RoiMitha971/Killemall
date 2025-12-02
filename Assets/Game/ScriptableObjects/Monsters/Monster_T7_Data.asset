@@ -22,10 +22,11 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _id: 692ACEF8-621811
+  _sprite: {fileID: 0}
   _monsterName: T7
   _resistance: 4
   _weakness: 3
-  _monsterTiers: 6
-  _health: 7
-  _damage: 3
-  _goldReward: 5
+  _monsterTier: 7
+  _overrideTierSettings: 0
+  _health: 15
+  _damage: 5

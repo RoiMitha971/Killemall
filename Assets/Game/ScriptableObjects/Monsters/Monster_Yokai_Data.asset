@@ -22,10 +22,11 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _id: 692ACEF9-2935BB
+  _sprite: {fileID: 21300000, guid: 1527679d697623c4ea21aab00a215f7e, type: 3}
   _monsterName: Yokai
   _resistance: 4
   _weakness: 3
-  _monsterTiers: 1
-  _health: 7
-  _damage: 3
-  _goldReward: 5
+  _monsterTier: 1
+  _overrideTierSettings: 0
+  _health: 3
+  _damage: 1

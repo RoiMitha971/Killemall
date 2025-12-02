@@ -1,3 +1,4 @@
+using Killemall.Data.GameplaySettings;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
@@ -42,7 +43,7 @@ public class MonsterCard : Card<MonsterData>
 
     public static MonsterCard New(Transform parent)
     {
-        var go = Instantiate(original:PrefabsDatabase.Instance.MonsterCardPrefab, parent:parent);
+        var go = Instantiate(original:GameplaySettings.Instance.Prefabs.MonsterCardPrefab, parent:parent);
         if(go.TryGetComponent(out MonsterCard card))
         {
             card.Active = false;

@@ -12,8 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 708b4b81a4aa4bb45bdfa0e5a08337eb, type: 3}
   m_Name: WeaponsDataList
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   _weapons:
-  - {fileID: 11400000, guid: 126f18d44f7310b42a951e377716aa27, type: 2}
   - {fileID: 11400000, guid: f07438e0927d7b84fb4ce7ea5c4709ef, type: 2}
   - {fileID: 11400000, guid: a06db06ed8828574c9b58e0b79b8cf40, type: 2}
   - {fileID: 11400000, guid: e9be9fcea1abe39479110831df846025, type: 2}
+  - {fileID: 11400000, guid: 126f18d44f7310b42a951e377716aa27, type: 2}

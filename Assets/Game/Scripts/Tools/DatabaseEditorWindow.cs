@@ -1,12 +1,13 @@
+using System.Linq;
+using System.Text.RegularExpressions;
+using Killemall.Data;
+using Killemall.Data.GameplaySettings;
+using Killemall.Tools;
 using Sirenix.OdinInspector.Editor;
 using Sirenix.Utilities;
 using Sirenix.Utilities.Editor;
-using System.Linq;
-using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
-using Killemall.Tools;
-using Killemall.Data;
 
 namespace Killemall.Editor
 {
@@ -14,6 +15,8 @@ namespace Killemall.Editor
     {
         private class Paths
         {
+            public const string GameplaySettings = "Assets/Game/Resources/Data/GameplaySettings.asset";
+
             public const string MonstersList = "Assets/Game/Resources/Data/MonstersDataList.asset";
             public const string Monster = "Assets/Game/ScriptableObjects/Monsters";
 
@@ -59,7 +62,7 @@ namespace Killemall.Editor
             tree.Config.DrawSearchToolbar = true;
 
             tree.DrawSearchToolbar();
-            //tree.AddAssetAtPath("Gameplay Settings", Paths.GameplaySettings, typeof(GameplaySettings)).AddIcon(EditorIcons.SettingsCog);
+            tree.AddAssetAtPath("Gameplay Settings", Paths.GameplaySettings, typeof(GameplaySettings)).AddIcon(EditorIcons.SettingsCog);
 
             tree.AddAssetAtPath("Monsters", Paths.MonstersList, typeof(MonstersDataList));
             tree.AddAllAssetsAtPath("Monsters", Paths.Monster, typeof(MonsterData), includeSubDirectories: true).ForEach(TrimName);
@@ -68,6 +71,9 @@ namespace Killemall.Editor
             tree.AddAllAssetsAtPath("Weapons", Paths.Weapon, typeof(WeaponData), includeSubDirectories: true).ForEach(TrimName);
 
             tree.EnumerateTree().SortMenuItemsByName();
+
+            tree.EnumerateTree().AddIcons<WeaponData>(x => x.IsInDatabase() ? null : EditorIcons.UnityWarningIcon).ForEach(TrimName);
+            tree.EnumerateTree().AddIcons<MonsterData>(x => x.IsInDatabase() ? null : EditorIcons.UnityWarningIcon).ForEach(TrimName);
             return tree;
         }
 
