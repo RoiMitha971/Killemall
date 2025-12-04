@@ -58,8 +58,11 @@ namespace Killemall.Data
             CheckGameDataIDs();
         }
 
-        public virtual bool IsInDatabase() => false;
+        protected virtual bool IsInDatabase() => false;
         protected virtual bool CanBeAddedToDatabase() => true;
+
+        protected virtual bool HasWarnings() => false;
+        protected virtual bool HasErrors() => false;
 
         private bool ShowAddToDatabase => !IsInDatabase() && CanBeAddedToDatabase();
 
@@ -123,6 +126,8 @@ namespace Killemall.Data
 
             return faultyElements;
         }
+
+
 #endif // UNITY_EDITOR
         #endregion
     }

@@ -3,6 +3,7 @@ using Killemall.Data;
 using Sirenix.OdinInspector;
 using UnityEditor;
 using UnityEngine;
+using Sirenix.Utilities.Editor;
 
 [CreateAssetMenu(fileName = "Monster_New_Data", menuName = "Killemall/Data/Monsters/Monster")]
 public class MonsterData : ScriptableGameData
@@ -19,7 +20,7 @@ public class MonsterData : ScriptableGameData
 
     [TitleGroup("Monster")]
     [HorizontalGroup("Monster/Split", width: 111)]
-    [PreviewField(Height = 100, Alignment = ObjectFieldAlignment.Left), HideLabel]
+    [PreviewField(Height = 100, Alignment = Sirenix.OdinInspector.ObjectFieldAlignment.Left), HideLabel]
     [SerializeField] Sprite _sprite;
 
     [HorizontalGroup("Monster/Split")]
@@ -71,7 +72,13 @@ public class MonsterData : ScriptableGameData
         }
     }
 
-    public override bool IsInDatabase()
+    protected override bool HasWarnings()
+    {
+        return !IsInDatabase() 
+            || !name.Contains(_monsterName.Replace(" ", ""));
+    }
+
+    protected override bool IsInDatabase()
     {
         return MonstersDataList.Instance.Contains(this);
     }
@@ -90,6 +97,20 @@ public class MonsterData : ScriptableGameData
 
         EditorUtility.SetDirty(MonstersDataList.Instance);
         AssetDatabase.SaveAssets();
+    }
+
+    public Texture2D GetDatabaseIcon()
+    {
+        if (HasErrors())
+            return EditorIcons.UnityErrorIcon;
+        
+        if(HasWarnings())
+            return EditorIcons.UnityWarningIcon;
+
+        if(Sprite != null)
+            return Sprite.texture;
+
+        return null;
     }
 #endif
 }

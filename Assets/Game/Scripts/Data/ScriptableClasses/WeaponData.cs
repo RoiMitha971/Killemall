@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using Sirenix.Utilities.Editor;
 using UnityEditor;
 using UnityEngine;
 
@@ -18,7 +19,7 @@ namespace Killemall.Data
         #region Fields
         [TitleGroup("Weapon")]
         [HorizontalGroup("Weapon/Split", width: 111)]
-        [PreviewField(Height = 100, Alignment = ObjectFieldAlignment.Left), HideLabel]
+        [PreviewField(Height = 100, Alignment = Sirenix.OdinInspector.ObjectFieldAlignment.Left), HideLabel]
         [SerializeField] private Sprite _sprite;
 
         [HorizontalGroup("Weapon/Split")]
@@ -48,7 +49,13 @@ namespace Killemall.Data
         #region Methods
 
 #if UNITY_EDITOR
-        public override bool IsInDatabase()
+
+        protected override bool HasWarnings()
+        {
+            return !IsInDatabase()
+                || !name.Contains(_weaponName.Replace(" ", ""));
+        }
+        protected override bool IsInDatabase()
         {
             return WeaponsDataList.Instance.Contains(this);
         }
@@ -67,6 +74,19 @@ namespace Killemall.Data
 
             EditorUtility.SetDirty(WeaponsDataList.Instance);
             AssetDatabase.SaveAssets();
+        }
+        public Texture2D GetDatabaseIcon()
+        {
+            if (HasErrors())
+                return EditorIcons.UnityErrorIcon;
+
+            if (HasWarnings())
+                return EditorIcons.UnityWarningIcon;
+
+            if (Sprite != null)
+                return Sprite.texture;
+
+            return null;
         }
 #endif
         #endregion

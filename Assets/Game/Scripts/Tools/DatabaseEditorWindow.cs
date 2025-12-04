@@ -72,8 +72,8 @@ namespace Killemall.Editor
 
             tree.EnumerateTree().SortMenuItemsByName();
 
-            tree.EnumerateTree().AddIcons<WeaponData>(x => x.IsInDatabase() ? null : EditorIcons.UnityWarningIcon).ForEach(TrimName);
-            tree.EnumerateTree().AddIcons<MonsterData>(x => x.IsInDatabase() ? null : EditorIcons.UnityWarningIcon).ForEach(TrimName);
+            tree.EnumerateTree().AddIcons<WeaponData>(x => x.GetDatabaseIcon()).ForEach(TrimName);
+            tree.EnumerateTree().AddIcons<MonsterData>(x => x.GetDatabaseIcon()).ForEach(TrimName);
             return tree;
         }
 

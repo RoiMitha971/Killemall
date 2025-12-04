@@ -24,9 +24,9 @@ MonoBehaviour:
   _monsters:
   - {fileID: 11400000, guid: f53937c335103a84a9f6a3a4fee841c4, type: 2}
   - {fileID: 11400000, guid: d0871fc93b0d95c47a8f125ea07e48f8, type: 2}
-  - {fileID: 11400000, guid: a00051549fa015d449d7a9b2f580700c, type: 2}
   - {fileID: 11400000, guid: 2588d93988a7928479ca05b852bf778b, type: 2}
   - {fileID: 11400000, guid: 8d3310bf288164e4791f853b7a670f6b, type: 2}
   - {fileID: 11400000, guid: b40968bfd6e4c9249831dfdd8f4d3acd, type: 2}
   - {fileID: 11400000, guid: af358d83890e2ef4ab68e81982f313e9, type: 2}
   - {fileID: 11400000, guid: 6f12e3417968fba48822dee68f5f6d34, type: 2}
+  - {fileID: 11400000, guid: a00051549fa015d449d7a9b2f580700c, type: 2}
