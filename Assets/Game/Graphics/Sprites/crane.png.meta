@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 98949b027c357d747aa5fec2c7b16760
+guid: 0551a25cb01ff434fa193ff1724e8965
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6809629792077775226
-    second: carte4_0
+      213: 3359917836000898714
+    second: crane_0
+  - first:
+      213: -5379436667848645591
+    second: crane_1
+  - first:
+      213: 7877992535354240253
+    second: crane_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: carte4_0
+      name: crane_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 600
-        height: 840
+        x: 392
+        y: 686
+        width: 29
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 68e794778c55f71a0800000000000000
-      internalID: -6809629792077775226
+      spriteID: a9e25516873d0ae20800000000000000
+      internalID: 3359917836000898714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crane_1
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 685
+        width: 93
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 924ab212ad66855b0800000000000000
+      internalID: -5379436667848645591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crane_2
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 687
+        width: 29
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfce7f4b870445d60800000000000000
+      internalID: 7877992535354240253
       vertices: []
       indices: 
       edges: []
@@ -148,7 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      carte4_0: -6809629792077775226
+      crane_0: 3359917836000898714
+      crane_1: -5379436667848645591
+      crane_2: 7877992535354240253
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -9,12 +9,15 @@ namespace Killemall.Game
         public int DamageAmount => _damageAmount;
         public DamageType DamageType => _damageType;
         public DamageType Socket => _socket;
+        public Sprite Sprite => _sprite;
 
         private string _weaponName;
         private int _damageAmount;
         private DamageType _damageType;
 
         private DamageType _socket;
+
+        private Sprite _sprite;
 
         public Weapon(WeaponData weaponData)
         {
@@ -24,6 +27,10 @@ namespace Killemall.Game
             _socket = weaponData.Socket;
         }
 
+        public void DealDamage(Monster target)
+        {
+            target.TakeDamage(new DamageInstance(_damageAmount, _damageType));
+        }
     }
 }
 

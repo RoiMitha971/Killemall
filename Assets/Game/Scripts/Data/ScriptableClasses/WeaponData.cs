@@ -45,6 +45,8 @@ namespace Killemall.Data
         [VerticalGroup("Weapon/Split/Right")]
         [LabelText("Socket"), LabelWidth(120)]
         [SerializeField] DamageType _socket;
+
+        [SerializeField] private WeaponEffect _weaponEffect;
         #endregion
         #region Methods
 

@@ -31,6 +31,11 @@ public class MonstersDataList : ScriptableObjectSingleton<MonstersDataList>
 
             if(!validChoices.IsNullOrEmpty())
                 returnList.Add(validChoices[Random.Range(0, validChoices.Count)]);
+
+            else
+            {
+                Debug.Log($"MonsterDataList.RandomMonsterWave : Coulnd't find matching monster at strength {str}");
+            }
         }
 
         return returnList;
@@ -63,6 +68,13 @@ public class MonstersDataList : ScriptableObjectSingleton<MonstersDataList>
 
             remaining -= value;
         }
+
+        string str ="";
+        foreach (int i in result)
+        {
+            str += $"{i}, ";
+        }
+        Debug.Log("MonsterDataList.StrengthRepartition : "+str);
 
         return result;
     }

@@ -26,7 +26,7 @@ MonoBehaviour:
   _monsterName: T4
   _resistance: 4
   _weakness: 3
-  _monsterTier: 1
+  _monsterTier: 3
   _overrideTierSettings: 0
-  _health: 3
-  _damage: 1
+  _health: 7
+  _damage: 2

@@ -1,7 +1,13 @@
+using System.Collections.Generic;
 using Killemall.Data;
 using UnityEngine;
 
-public abstract class Card<T> : MonoBehaviour where T : ScriptableGameData
+/// <summary>
+/// Card object handle the interaction and visual behaviour of <see cref="T"/>
+/// </summary>
+
+
+public abstract class Card : MonoBehaviour
 {
     public bool Active
     {
@@ -15,8 +21,16 @@ public abstract class Card<T> : MonoBehaviour where T : ScriptableGameData
             gameObject.SetActive(value);
         }
     }
-
-    protected T _context;
     private bool _active;
-    public abstract void Activate(T card);
+
+    protected Dictionary<DamageType, Color> _typeColors = new Dictionary<DamageType, Color>
+    {
+        { DamageType.Physical, Color.gray },
+        {DamageType.Fire, Color.red },
+        {DamageType.Poison, Color.green },
+        {DamageType.Magic, Color.blue },
+    };
+
+    public abstract void RefreshVisuals();
+
 }

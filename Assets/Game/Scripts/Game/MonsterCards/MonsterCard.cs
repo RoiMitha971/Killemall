@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Threading;
 using Killemall.Data.GameplaySettings;
 using Sirenix.OdinInspector;
 using TMPro;
@@ -5,54 +7,43 @@ using UnityEngine;
 using UnityEngine.U2D.Animation;
 using UnityEngine.UI;
 
-public class MonsterCard : Card<MonsterData>
+public class MonsterCard : Card
 {
     [Header("Components")]
     [SerializeField] private TextMeshProUGUI _nameLabel;
     [SerializeField] private TextMeshProUGUI _healthLabel;
-
+    [PropertySpace]
+    [SerializeField] private Image _fullArt;
+    [PropertySpace]
     [SerializeField] private Image _resistIcon;
     [SerializeField] private Image _weakIcon;
 
-    [Header("Fields")]
-    [SerializeField] private SpriteLibraryAsset _library;
-
-
-    public override void Activate(MonsterData monster)
+    private Monster _monster; 
+    public void Activate(Monster monster)
     {
         if(monster == null)
         {
             return;
         }
 
-        _context = monster;
-        _nameLabel.text = _context.MonsterName;
-        _healthLabel.text = _context.Health.ToString();
-        
-        _resistIcon.sprite = _library.GetSprite("DamageTypes", _context.Resistance.ToString());
-        _weakIcon.sprite = _library.GetSprite("DamageTypes", _context.Weakness.ToString());
-
+        _monster = monster;
+        RefreshVisuals();
         Active = true;
     }
 
-    [Button("Deactivate")]
+    public override void RefreshVisuals()
+    {
+        _nameLabel.text = _monster.MonsterName;
+        _healthLabel.text = _monster.Health.ToString();
+
+        _fullArt.sprite = _monster.Sprite;
+
+        _resistIcon.color = _typeColors[_monster.Resistance];
+        _weakIcon.color = _typeColors[_monster.Weakness];
+    }
+
     public void Deactivate()
     {
         Active = false;
-    }
-
-    public static MonsterCard New(Transform parent)
-    {
-        var go = Instantiate(original:GameplaySettings.Instance.Prefabs.MonsterCardPrefab, parent:parent);
-        if(go.TryGetComponent(out MonsterCard card))
-        {
-            card.Active = false;
-            return card;
-        }
-        else
-        {
-            Destroy(go);
-            return null;
-        }
     }
 }

@@ -26,7 +26,7 @@ MonoBehaviour:
   _monsterName: Yokai
   _resistance: 4
   _weakness: 3
-  _monsterTier: 1
+  _monsterTier: 2
   _overrideTierSettings: 0
-  _health: 3
-  _damage: 1
+  _health: 5
+  _damage: 2
